@@ -1,11 +1,16 @@
 import express from 'express'
 import router from './routes/index.js'
-import './loadEnv.js'
+import cors from 'cors'
+import dotenv from 'dotenv';
+dotenv.config()
+
 
 
 const app = express()
+app.options('*', cors())
+const port = process.env.PORT
 
-const port = process.env.PORT || 4000
+app.use(cors())
 
 //adding router
 app.use('/', router)
