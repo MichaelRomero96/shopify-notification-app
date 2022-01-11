@@ -3,6 +3,6 @@ import { getCustomers } from '../controllers/main.controller.js'
 
 const router = Router()
 
-router.get('/getCostumersCount', getCustomers)
+router.get('/getCustomersCounts', getCustomers)
 
 export default router
