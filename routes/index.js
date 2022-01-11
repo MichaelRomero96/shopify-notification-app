@@ -1,10 +1,8 @@
-const express = require('express')
+import { Router } from 'express'
+import { getCustomers } from '../controllers/main.controller.js'
 
-const router = express.Router()
+const router = Router()
 
-router.get('/validateUser', (req, res) => {
-    console.log(process.env.ADMIN_API_KEY)
-    res.send(process.env.ADMIN_API_KEY)
-})
+router.get('/getCostumersCount', getCustomers)
 
-module.exports = router
+export default router
